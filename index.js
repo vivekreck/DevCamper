@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const colors = require('colors');
 const connectDB = require('./configs/db')
+const errorHandler = require('./middleware/error');
 
 // Load env vars
 dotenv.config({ path: './configs/config.env' });
@@ -19,6 +20,9 @@ app.use(express.json())
 
 // Call routers
 app.use('/api/v1/bootcamps', bootcamps);
+
+// error handler added
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 8080;
 
