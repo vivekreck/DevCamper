@@ -14,4 +14,8 @@ router
     .put(Controller.updateBootcamp)
     .delete(Controller.deleteBootcamp)
 
+router
+    .route('/radius/:zipcode/:distance')
+    .get(Controller.getBootcampsInRadius)
+
 module.exports = router;
