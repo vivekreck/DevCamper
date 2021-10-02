@@ -10,6 +10,7 @@ router
 
 router
     .route('/:id')
-    .get(controllers.getCourse);
+    .get(controllers.getCourse)
+    .put(controllers.updateCourse);
 
 module.exports = router;
