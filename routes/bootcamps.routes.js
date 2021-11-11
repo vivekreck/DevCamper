@@ -9,6 +9,8 @@ const courseRouter = require('./courses.routes');
 // Re-route into other resource routers
 router.use('/:bootcampId/courses', courseRouter);
 
+router.route('/:id/photo').put(Controller.bootcampPhotoUpload);
+
 router
     .route('/')
     .get(Controller.getBootcamps)
